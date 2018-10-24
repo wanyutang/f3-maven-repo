@@ -8,6 +8,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>f3mm-admin</module>
+	</modules>
+
 	<name>f3mm-admin-parent</name>
 	<description>f3mm-admin-parent project for Spring Boot</description>
 
