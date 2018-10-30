@@ -6,6 +6,7 @@
 	<!-- mvn install -f pom-f3mm-admin-parent.xml -->	
 	<!-- 
 	mvn install -f pom-f3mm-admin-parent.xml
+	mvn install:install-file -Dfile=pom-f3mm-admin-parent.xml -DpomFile=pom-f3mm-admin-parent.xml -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo
 	mvn install:install-file -DgroupId=com.fun3w -DartifactId=f3mm-admin-parent -Dversion=0.0.1-SNAPSHOT -Dfile=pom-f3mm-admin-parent.xml -Dpackaging=pom -DgeneratePom=true -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo -DcreateChecksum=true
 	git push - -delete origin dev
 	git branch dev3 -D
