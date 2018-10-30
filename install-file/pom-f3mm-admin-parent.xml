@@ -5,8 +5,8 @@
 
 	<!-- mvn install -f pom-f3mm-admin-parent.xml -->	
 	<!-- 
-	mvn install -f pom-f3mm-admin-parent.xml
-	mvn install:install-file -Dfile=pom-f3mm-admin-parent.xml -DpomFile=pom-f3mm-admin-parent.xml -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo
+	mvn install -f ./install-file/pom-f3mm-admin-parent.xml
+	mvn install:install-file -Dfile=./install-file/pom-f3mm-admin-parent.xml -DpomFile=./install-file/pom-f3mm-admin-parent.xml -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo
 	mvn install:install-file -DgroupId=com.fun3w -DartifactId=f3mm-admin-parent -Dversion=0.0.1-SNAPSHOT -Dfile=pom-f3mm-admin-parent.xml -Dpackaging=pom -DgeneratePom=true -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo -DcreateChecksum=true
 	git push - -delete origin dev
 	git branch dev3 -D
@@ -22,9 +22,9 @@
 	<description>f3mm-admin-parent project for Spring Boot</description>
 
 	<parent>
-		<groupId>com.fun3w</groupId>
-		<artifactId>f3mm-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.17.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
