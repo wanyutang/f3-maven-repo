@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>com.fun3w</groupId>
 			<artifactId>f3mm-layout-adminlte</artifactId>
-			<version>2.4.8</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
