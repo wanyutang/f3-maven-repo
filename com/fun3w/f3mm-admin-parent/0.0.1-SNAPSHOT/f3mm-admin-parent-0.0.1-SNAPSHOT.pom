@@ -3,10 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- mvn install -f pom-f3mm-admin-parent.xml -->	
 	<!-- 
-	mvn install -f pom-f3mm-admin-parent.xml
-	mvn install:install-file -Dfile=pom-f3mm-admin-parent.xml -DpomFile=pom-f3mm-admin-parent.xml -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo
+	mvn install -f pom-f3mm-admin-parent.xml 
+	mvn install:install-file -Dfile='pom-f3mm-admin-parent.xml' -DpomFile='pom-f3mm-admin-parent.xml' -DlocalRepositoryPath='./../f3-maven-repo'
+	-->	
+	<!-- 
+	mvn install -f ./install-file/pom-f3mm-admin-parent.xml
+	mvn install:install-file -Dfile=pom-f3mm-admin-parent.xml -DpomFile=pom-f3mm-admin-parent.xml -DlocalRepositoryPath=./../f3-maven-repo
 	mvn install:install-file -DgroupId=com.fun3w -DartifactId=f3mm-admin-parent -Dversion=0.0.1-SNAPSHOT -Dfile=pom-f3mm-admin-parent.xml -Dpackaging=pom -DgeneratePom=true -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo -DcreateChecksum=true
 	git push - -delete origin dev
 	git branch dev3 -D
@@ -22,9 +25,9 @@
 	<description>f3mm-admin-parent project for Spring Boot</description>
 
 	<parent>
-		<groupId>com.fun3w</groupId>
-		<artifactId>f3mm-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.17.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -32,6 +35,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<outputDirectory>/tmp</outputDirectory>
+		<localRepositoryPath>/Users/winny/Documents/GitHub/f3-maven-repo</localRepositoryPath>
 	</properties>
 
 	<dependencies>
@@ -68,13 +73,47 @@
 		<dependency>
 			<groupId>com.fun3w</groupId>
 			<artifactId>f3mm-layout-adminlte</artifactId>
-			<version>2.4.8</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.12</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring-boot-web-starter -->
+		<!-- http://shiro.apache.org/spring-boot.html#configuration-properties -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-web-starter</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.51</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fun3w</groupId>
+			<artifactId>f3mm-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
