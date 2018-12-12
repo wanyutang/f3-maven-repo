@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<!-- 
 	mvn install
-	mvn install:install-file -Dfile=./target/f3mm-core-0.0.1-SNAPSHOT.jar -DlocalRepositoryPath=/Users/winny/Documents/GitHub/f3-maven-repo
+	mvn install:install-file -Dfile=./target/f3mm-core-0.0.1-SNAPSHOT.jar -DlocalRepositoryPath=../f3-maven-repo
 	-->	
 	<groupId>com.fun3w</groupId>
 	<artifactId>f3mm-core</artifactId>
@@ -25,7 +25,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<outputDirectory>/tmp</outputDirectory>
+		<localRepositoryPath>${basedir}/../f3-maven-repo</localRepositoryPath>
 	</properties>
 
 	<dependencies>
@@ -65,6 +65,13 @@
 			<version>3.8.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-crypto-hash -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -79,36 +86,10 @@
 			<id>dev</id>
 			<properties>
 				<spring.profiles.active>dev</spring.profiles.active>
-				<localRepositoryPath>${basedir}/../f3-maven-repo</localRepositoryPath>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<build>
-				<plugins>
-					<!-- https://maven.apache.org/plugins/maven-install-plugin/install-file-mojo.html -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-install-plugin</artifactId>
-						<version>3.0.0-M1</version>
-						<inherited>false</inherited>
-						<executions>
-							<execution>
-								<id>install:install-file</id>
-								<phase>install</phase>
-								<!-- <phase>validate</phase> -->
-								<goals>
-									<goal>install-file</goal>
-								</goals>
-								<configuration>
-									<file>${project.build.directory}/${project.build.finalName}.jar</file>
-									<localRepositoryPath>${localRepositoryPath}</localRepositoryPath>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 		<profile>
 			<id>prod</id>
@@ -135,6 +116,27 @@
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+			</plugin>
+			<!-- https://maven.apache.org/plugins/maven-install-plugin/install-file-mojo.html -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>install:install-file</id>
+						<phase>install</phase>
+						<!-- <phase>validate</phase> -->
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/${project.build.finalName}.jar</file>
+							<localRepositoryPath>${localRepositoryPath}</localRepositoryPath>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
