@@ -36,6 +36,12 @@
 
 			<dependency>
 				<groupId>com.fun3w</groupId>
+				<artifactId>f3mm-jpa</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fun3w</groupId>
 				<artifactId>f3mm-base-boot</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
@@ -156,12 +162,30 @@
 				<version>6.0.16.Final</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-crypto-hash</artifactId>
+				<version>1.4.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fun3w</groupId>
+				<artifactId>f3mm-shiro</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.9.4</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
 
-		
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -198,6 +222,12 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -308,10 +338,10 @@
 			<id>mvn-repo</id>
 			<url>https://raw.githubusercontent.com/wanyutang/f3-maven-repo/master</url>
 			<releases>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 	</repositories>
